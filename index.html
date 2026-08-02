@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スタバの注文、もう迷わない。| Coffee Order Notes</title>
+<meta name="description" content="スタバのサイズ・カスタマイズ・注文フレーズ・地域限定情報をまとめた非公式ノート。定期更新。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+
+<!--
+  Google AdSense
+  審査に通ってpublisher IDが発行されたら、下の2箇所の
+  ca-pub-XXXXXXXXXXXXXXXX をあなたのIDに置き換えてコメントを外してください。
+  審査前の状態ではこのスクリプトは読み込まれません。
+-->
+<!--
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+
+<style>
+@font-face {
+  font-family: 'ShipporiMincho';
+  src: local('Hiragino Mincho ProN'), local('Yu Mincho');
+}
+
+:root {
+  --bg: #f6efe3;
+  --bg-raised: #fffaf1;
+  --ink: #2c2118;
+  --ink-soft: #5a4c3d;
+  --line: #ddd0b8;
+  --accent: #7a6a3f;
+  --accent-strong: #5a4c22;
+  --copper: #b5652f;
+  --copper-soft: #e7c9a8;
+  --tag-bg: #efe4cd;
+  --shadow: 0 1px 2px rgba(44,33,24,0.06), 0 8px 24px rgba(44,33,24,0.06);
+  --radius: 14px;
+}
+
+:root[data-theme="dark"] {
+  --bg: #1c1712;
+  --bg-raised: #26201a;
+  --ink: #f1e9dc;
+  --ink-soft: #c9bba4;
+  --line: #3d3327;
+  --accent: #c9b878;
+  --accent-strong: #e3d59a;
+  --copper: #e08a4f;
+  --copper-soft: #4a3826;
+  --tag-bg: #332a1e;
+  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1712;
+    --bg-raised: #26201a;
+    --ink: #f1e9dc;
+    --ink-soft: #c9bba4;
+    --line: #3d3327;
+    --accent: #c9b878;
+    --accent-strong: #e3d59a;
+    --copper: #e08a4f;
+    --copper-soft: #4a3826;
+    --tag-bg: #332a1e;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.3);
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+  line-height: 1.75;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+header.hero {
+  padding: 8px 0 36px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--copper);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+
+h1 {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 600;
+  margin: 0 0 14px;
+  text-wrap: balance;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.lede {
+  font-size: 16px;
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.meta-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  flex-wrap: wrap;
+}
+
+.meta-pill {
+  background: var(--tag-bg);
+  border-radius: 999px;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+}
+
+section {
+  margin-bottom: 52px;
+}
+
+h2 {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+h2 .num {
+  font-size: 13px;
+  color: var(--copper);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.section-desc {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  margin: 0 0 22px;
+  max-width: 58ch;
+}
+
+/* size/temp guide */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 560px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.size-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  overflow-x: auto;
+  display: block;
+}
+
+.size-table table { width: 100%; border-collapse: collapse; }
+
+.size-table th, .size-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+
+.size-table th {
+  color: var(--ink-soft);
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+}
+
+/* customization list */
+.custom-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.custom-item {
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+}
+
+.custom-item summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-item summary::-webkit-details-marker { display: none; }
+
+.custom-item summary::after {
+  content: "+";
+  font-size: 20px;
+  color: var(--copper);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.custom-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.custom-item .tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.tag {
+  font-size: 11.5px;
+  background: var(--tag-bg);
+  color: var(--accent-strong);
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+}
+
+.custom-body {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  border-top: 1px dashed var(--line);
+  padding-top: 12px;
+}
+
+.order-phrase {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  background: var(--tag-bg);
+  border-left: 3px solid var(--copper);
+  padding: 8px 12px;
+  margin-top: 10px;
+  font-size: 14px;
+  border-radius: 0 6px 6px 0;
+}
+
+/* order phrasebook */
+.phrase-list {
+  display: grid;
+  gap: 10px;
+}
+
+.phrase-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) 2fr;
+  gap: 14px;
+  align-items: start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+@media (max-width: 560px) {
+  .phrase-row { grid-template-columns: 1fr; gap: 4px; }
+}
+
+.phrase-row .situation {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.phrase-row .phrase {
+  font-weight: 600;
+}
+
+/* campaign */
+.campaign-box {
+  background: linear-gradient(155deg, var(--copper-soft), var(--bg-raised) 60%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 22px;
+  box-shadow: var(--shadow);
+}
+
+.campaign-empty {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.campaign-empty .icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.campaign-empty h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  color: var(--accent-strong);
+}
+
+.campaign-empty p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+/* regions */
+.region-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.region-tab {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--tag-bg);
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.region-tab:hover {
+  color: var(--ink);
+}
+
+.region-tab[aria-selected="true"] {
+  background: var(--copper);
+  border-color: var(--copper);
+  color: var(--bg-raised);
+}
+
+.region-panel {
+  display: none;
+}
+
+.region-panel.is-active {
+  display: block;
+}
+
+/* ad slots */
+.ad-slot {
+  margin: 40px 0;
+  padding: 14px;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  background: var(--bg-raised);
+}
+
+.ad-slot .ad-label {
+  display: block;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+a { color: var(--copper); }
+
+:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 2px;
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">Coffee Order Notes — 私的スタバ攻略ノート</p>
+    <h1>スタバの注文、もう迷わない。</h1>
+    <p class="lede">サイズ・温度の言い方から、人気のカスタマイズ、実際に使える注文フレーズまで。「なんとなく難しい」を1ページにまとめました。</p>
+    <div class="meta-row">
+      <span class="meta-pill">最終更新: 2026年8月2日</span>
+      <span class="meta-pill">全 5 セクション</span>
+    </div>
+  </header>
+
+  <!-- 広告枠 1: ヘッダー直下 -->
+  <div class="ad-slot" id="ad-slot-top">
+    <span class="ad-label">広告</span>
+    <!-- AdSense有効化後、ここに <ins class="adsbygoogle" ...> と (adsbygoogle=window.adsbygoogle||[]).push({}) を追加 -->
+  </div>
+
+  <section id="basics">
+    <h2><span class="num">01</span> サイズと温度の基本</h2>
+    <p class="section-desc">まずはこれだけ覚えれば注文の8割は困りません。</p>
+    <div class="size-table" style="margin-bottom:14px;">
+      <table>
+        <thead>
+          <tr><th>サイズ名</th><th>目安</th><th>ひとこと</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Short</td><td>約240ml</td><td>ホットのみ。一番小さいサイズ</td></tr>
+          <tr><td>Tall</td><td>約350ml</td><td>いちばん注文されている定番サイズ</td></tr>
+          <tr><td>Grande</td><td>約470ml</td><td>しっかり飲みたい日に</td></tr>
+          <tr><td>Venti</td><td>約590ml(ホット550ml)</td><td>コールドは氷込みでかなり量が多い</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>ホット / アイスの言い方</h3>
+        <p>「ホットで」「アイスで」だけでOK。特に指定しなければ通常の温度・氷量で作られます。</p>
+      </div>
+      <div class="card">
+        <h3>迷ったら</h3>
+        <p>「おすすめありますか」と聞けば季節限定を教えてもらえることも。会話も注文の一部です。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="customs">
+    <h2><span class="num">02</span> 人気のカスタマイズ</h2>
+    <p class="section-desc">タップで詳細と実際の注文フレーズが開きます。多くは無料、一部有料です。</p>
+    <div class="custom-list">
+
+      <details class="custom-item" open>
+        <summary>ミルクを変更する<span class="tag">無料〜+55円</span></summary>
+        <div class="tags">
+          <span class="tag">豆乳</span><span class="tag">オーツミルク</span><span class="tag">低脂肪乳</span>
+        </div>
+        <div class="custom-body">
+          通常の牛乳から豆乳・オーツミルク・低脂肪乳などに変更できます。豆乳は多くのドリンクで無料、オーツミルクは有料の店舗もあるため会計時に確認を。ラテ系との相性が良く、さっぱりした後味になります。
+          <div class="order-phrase">「ミルクを豆乳に変えてください」</div>
+        </div>
+      </details>
+
+      <details class="custom-item">
+        <summary>エスプレッソショット追加<span class="tag">+約60円</span></summary>
+        <div class="tags"><span class="tag">濃さ調整</span><span class="tag">ラテ系向け</span></div>
+        <div class="custom-body">
+          ラテやカプチーノなどエスプレッソベースのドリンクに、ショットを1つ追加してコーヒー感を強くできます。逆に「エスプレッソ1つ減らして」というライトな注文も可能です。
+          <div class="order-phrase">「エスプレッソショットを追加してください」</div>
+        </div>
+      </details>
+
+      <details class="custom-item">
+        <summary>ホイップクリームの量を調整<span class="tag">無料</span></summary>
+        <div class="tags"><span class="tag">増量</span><span class="tag">少なめ</span><span class="tag">なし</span></div>
+        <div class="custom-body">
+          フラペチーノなどに乗ったホイップは、増量・少なめ・なしを無料で選べます。甘さを抑えたい場合は「ホイップ少なめ」が定番の頼み方です。
+          <div class="order-phrase">「ホイップ少なめでお願いします」</div>
+        </div>
+      </details>
+
+      <details class="custom-item">
+        <summary>シロップ・ソースの追加/変更<span class="tag">無料〜+55円</span></summary>
+        <div class="tags"><span class="tag">バニラ</span><span class="tag">キャラメル</span><span class="tag">ヘーゼルナッツ</span></div>
+        <div class="custom-body">
+          バニラシロップやキャラメルソースはポンプ数を指定して追加・増量できます。既定のシロップを別の種類に無料で変更できる場合もあります。甘さを足したいときの定番カスタム。
+          <div class="order-phrase">「バニラシロップを1つ追加してください」</div>
+        </div>
+      </details>
+
+      <details class="custom-item">
+        <summary>氷の量を調整<span class="tag">無料</span></summary>
+        <div class="tags"><span class="tag">アイスドリンク向け</span></div>
+        <div class="custom-body">
+          アイスドリンクは「氷少なめ」「氷なし」を無料で選べます。氷を減らすとその分ドリンクの量が増えるため、より濃く多く楽しみたい人におすすめ。逆に「氷多め」でキンキンに冷やすことも可能です。
+          <div class="order-phrase">「氷少なめでお願いします」</div>
+        </div>
+      </details>
+
+      <details class="custom-item">
+        <summary>ドリズル(ソースがけ)追加<span class="tag">+約55円</span></summary>
+        <div class="tags"><span class="tag">見た目UP</span><span class="tag">フラペチーノ向け</span></div>
+        <div class="custom-body">
+          キャラメルドリズルやモカドリズルをホイップの上からかけるカスタム。見た目も華やかになり、フラペチーノ系との相性が抜群です。
+          <div class="order-phrase">「キャラメルドリズルを追加してください」</div>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- 広告枠 2: セクション間 -->
+  <div class="ad-slot" id="ad-slot-mid">
+    <span class="ad-label">広告</span>
+  </div>
+
+  <section id="phrases">
+    <h2><span class="num">03</span> 注文フレーズ集</h2>
+    <p class="section-desc">シーン別にそのまま使える言い回しです。</p>
+    <div class="phrase-list">
+      <div class="phrase-row">
+        <div class="situation">甘さを抑えたい</div>
+        <div class="phrase">「シロップ半分でお願いします」「ホイップなしで」</div>
+      </div>
+      <div class="phrase-row">
+        <div class="situation">カフェインを控えたい</div>
+        <div class="phrase">「カフェインレスにできますか」「デカフェでお願いします」</div>
+      </div>
+      <div class="phrase-row">
+        <div class="situation">持ち帰りたい</div>
+        <div class="phrase">「持ち帰りで」「テイクアウトでお願いします」</div>
+      </div>
+      <div class="phrase-row">
+        <div class="situation">店内でゆっくりしたい</div>
+        <div class="phrase">「店内で」「マグカップでお願いします」</div>
+      </div>
+      <div class="phrase-row">
+        <div class="situation">とにかく冷たく・濃く</div>
+        <div class="phrase">「氷少なめ、エスプレッソ追加でお願いします」</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="regions">
+    <h2><span class="num">04</span> 地域限定情報</h2>
+    <p class="section-desc">地方ごとのご当地限定ドリンク・グッズ・店舗キャンペーンをまとめています。タブで切り替えてください。</p>
+    <div class="region-tabs" role="tablist" aria-label="地方を選択">
+      <button class="region-tab" role="tab" data-region="hokkaido" aria-selected="true">北海道</button>
+      <button class="region-tab" role="tab" data-region="tohoku" aria-selected="false">東北</button>
+      <button class="region-tab" role="tab" data-region="kanto" aria-selected="false">関東</button>
+      <button class="region-tab" role="tab" data-region="chubu" aria-selected="false">中部</button>
+      <button class="region-tab" role="tab" data-region="kansai" aria-selected="false">関西</button>
+      <button class="region-tab" role="tab" data-region="chugoku" aria-selected="false">中国</button>
+      <button class="region-tab" role="tab" data-region="shikoku" aria-selected="false">四国</button>
+      <button class="region-tab" role="tab" data-region="kyushu" aria-selected="false">九州・沖縄</button>
+    </div>
+
+    <div class="region-panel is-active" data-region="hokkaido">
+      <div class="campaign-box">
+        <div class="campaign-empty">
+          <span class="icon">☕</span>
+          <div><h3>準備中です</h3><p>北海道エリアのご当地限定情報はまだ追記がありません。次回の更新で反映予定です。</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="region-panel" data-region="tohoku">
+      <div class="campaign-box">
+        <div class="campaign-empty">
+          <span class="icon">☕</span>
+          <div><h3>準備中です</h3><p>東北エリアのご当地限定情報はまだ追記がありません。次回の更新で反映予定です。</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="region-panel" data-region="kanto">
+      <div class="campaign-box">
+        <div class="campaign-empty">
+          <span class="icon">☕</span>
+          <div><h3>準備中です</h3><p>関東エリアのご当地限定情報はまだ追記がありません。次回の更新で反映予定です。</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="region-panel" data-region="chubu">
+      <div class="campaign-box">
+        <div class="campaign-empty">
+          <span class="icon">☕</span>
+          <div><h3>準備中です</h3><p>中部エリアのご当地限定情報はまだ追記がありません。次回の更新で反映予定です。</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="region-panel" data-region="kansai">
+      <div class="campaign-box">
+        <div class="campaign-empty">
+          <span class="icon">☕</span>
+          <div><h3>準備中です</h3><p>関西エリアのご当地限定情報はまだ追記がありません。次回の更新で反映予定です。</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="region-panel" data-region="chugoku">
+      <div class="campaign-box">
+        <div class="campaign-empty">
+          <span class="icon">☕</span>
+          <div><h3>準備中です</h3><p>中国エリアのご当地限定情報はまだ追記がありません。次回の更新で反映予定です。</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="region-panel" data-region="shikoku">
+      <div class="campaign-box">
+        <div class="campaign-empty">
+          <span class="icon">☕</span>
+          <div><h3>準備中です</h3><p>四国エリアのご当地限定情報はまだ追記がありません。次回の更新で反映予定です。</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="region-panel" data-region="kyushu">
+      <div class="campaign-box">
+        <div class="campaign-empty">
+          <span class="icon">☕</span>
+          <div><h3>準備中です</h3><p>九州・沖縄エリアのご当地限定情報はまだ追記がありません。次回の更新で反映予定です。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="campaign">
+    <h2><span class="num">05</span> 最新キャンペーン</h2>
+    <p class="section-desc">季節限定ドリンクや公式キャンペーンをここに随時追加していきます。</p>
+    <div class="campaign-box">
+      <div class="campaign-empty">
+        <span class="icon">☕</span>
+        <div>
+          <h3>準備中です</h3>
+          <p>まだキャンペーン情報の追記がありません。次回の更新で最新の期間限定情報を反映予定です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 広告枠 3: フッター直上 -->
+  <div class="ad-slot" id="ad-slot-bottom">
+    <span class="ad-label">広告</span>
+  </div>
+
+  <footer>
+    <span>個人でまとめた非公式ノートです。価格・仕様は変更される場合があります。</span>
+    <span>Coffee Order Notes</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.region-tab');
+  var panels = document.querySelectorAll('.region-panel');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var region = tab.getAttribute('data-region');
+      tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t === tab)); });
+      panels.forEach(function (p) {
+        p.classList.toggle('is-active', p.getAttribute('data-region') === region);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
