@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yoshi4486.github.io/sutaba-order-notes/sitemap.xml
